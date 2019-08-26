@@ -24,5 +24,12 @@ namespace GTech.Plugin.Share.Sample.Views
             var position = new Position(-18.9141075f, -48.2670119f);
             share.Waze(position);
         }
+
+        private void ShareWithCabify_Clicked(object sender, EventArgs e)
+        {
+            var share = new LocationWith();
+            var position = new Position(-18.9141075f, -48.2670119f);
+            share.Cabify(position);
+        }
     }
 }

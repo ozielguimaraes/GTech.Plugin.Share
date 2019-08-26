@@ -11,6 +11,8 @@
                     Clicked="ShareWithUber_Clicked" />
             <Button Text="Share with Waze"
                     Clicked="ShareWithWaze_Clicked" />
+            <Button Text="Share with Cabify"
+                    Clicked="ShareWithCabify_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

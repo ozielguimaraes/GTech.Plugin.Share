@@ -68,6 +68,23 @@ namespace GTech.Plugin.Share
             }
         }
 
+        public void Cabify(Position to)
+        {
+            try
+            {
+                var date = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                var latitude = to.Latitude.ToString().Replace(",", ".");
+                var longitude = to.Longitude.ToString().Replace(",", ".");
+                var json = $"{{ 'stops':[ current, {{ 'loc':{{ 'latitude':{latitude}, 'longitude':{longitude} }} }}], 'start_at': {date} }}";
+                Device.OpenUri(new Uri($"cabify://cabify/journey?json={json}"));
+            }
+            catch
+            {
+                var appId = Device.RuntimePlatform == Device.Android ? "com.cabify.rider" : "id476087442";
+                OpenStore(appId);
+            }
+        }
+
         public void OpenStore(string appId)
         {
             var url = Device.RuntimePlatform == Device.Android ? "market://details?id=" : "http://itunes.apple.com/br/app/";
