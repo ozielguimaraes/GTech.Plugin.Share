@@ -6,6 +6,7 @@ namespace GTech.Plugin.Share.Sample.Models
 {
     public enum MenuItemType
     {
+        ShareLocation,
         Browse,
         About
     }

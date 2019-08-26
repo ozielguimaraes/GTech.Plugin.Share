@@ -39,12 +39,6 @@ namespace GTech.Plugin.Share.Sample.Views
             ItemsListView.SelectedItem = null;
         }
 
-        async void OpenUber_Clicked(object sender, EventArgs e)
-        {
-            var shareWith = new LocationWith(Constants.ClientId.Uber);
-            shareWith.Uber(new Position(-18.8805684f, -48.297926f), new Position(-18.9083469f, -48.263565f, "Center Shopping"));
-        }
-
         protected override void OnAppearing()
         {
             base.OnAppearing();

@@ -9,8 +9,6 @@ using GTech.Plugin.Share.Sample.Models;
 
 namespace GTech.Plugin.Share.Sample.Views
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : MasterDetailPage
     {
@@ -21,7 +19,7 @@ namespace GTech.Plugin.Share.Sample.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.ShareLocation, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -30,6 +28,9 @@ namespace GTech.Plugin.Share.Sample.Views
             {
                 switch (id)
                 {
+                    case (int)MenuItemType.ShareLocation:
+                        MenuPages.Add(id, new NavigationPage(new ShareLocationPage()));
+                        break;
                     case (int)MenuItemType.Browse:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
